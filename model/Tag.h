@@ -28,8 +28,8 @@ public:
     void setDeepTabulation(int deepTabulation);
     void addTag(Tag *tag);
     void addAttribute(Attribute *attribute);
-    std::string getPrefixTag() const;
-    std::string getPostfixTag() const;
+    [[nodiscard]] std::string getPrefixTag() const;
+    [[nodiscard]] std::string getPostfixTag() const;
     [[nodiscard]] std::string toString() const;
 };
 

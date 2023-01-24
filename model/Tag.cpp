@@ -57,7 +57,7 @@ std::string Tag::toString() const {
 
 void Tag::setOrphan(bool orphan) {
     if (orphan) {
-        this->m_text = nullptr;
+        this->m_text.clear();
         this->tags.clear();
     }
     this->isOrphan = orphan;
@@ -78,7 +78,9 @@ std::string Tag::getPrefixTag() const {
         }
     }
 
-    result += ">";
+    if (!isOrphan) {
+        result += ">";
+    }
 
     if (!isOrphan && !tags.empty()) {
         result += "\n";
@@ -102,10 +104,7 @@ std::string Tag::getPostfixTag() const {
 
         result += "</"+this->m_name+">\n";
 
-
     }
-
-
 
     return result;
 }
