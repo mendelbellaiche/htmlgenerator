@@ -12,9 +12,11 @@
 class Page {
 private:
     std::string m_name;
-    Tag* tagHtml;
+    Tag* m_tagHtml;
 
 public:
+    Page(Tag *tag);
+    ~Page();
     [[nodiscard]] std::string toString() const;
 };
 
