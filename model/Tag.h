@@ -5,21 +5,28 @@
 #ifndef HTMLGENERATOR_TAG_H
 #define HTMLGENERATOR_TAG_H
 
+#include <vector>
 #include <string>
+#include "Attribute.h"
 
 class Tag {
 
 private:
+    bool isOrphan = false;
     std::string m_name;
     std::string m_text;
-    std::vector<Tag> *tags;
+    std::vector<Attribute*> attributes;
+    std::vector<Tag*> tags;
 
 public:
-    Tag(std::string name);
+    explicit Tag(std::string name);
     ~Tag();
+    void setOrphan(bool orphan);
     void setName(std::string name);
     void setText(std::string text);
     void addTag(Tag *tag);
+    void addAttribute(Attribute *attribute);
+    [[nodiscard]] std::string toString() const;
 };
 
 

@@ -3,4 +3,4 @@ project(htmlgenerator)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(htmlgenerator main.cpp model/Tag.h model/Tag.cpp)
+add_executable(htmlgenerator main.cpp model/Tag.h model/Tag.cpp model/Attribute.h model/Attribute.cpp model/Page.h model/Page.cpp)
