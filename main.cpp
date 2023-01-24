@@ -21,7 +21,21 @@ int main() {
 
     auto *htmlTag = new Tag("html");
     auto *headTag = new Tag("head", 1);
+    auto *metaCharsetHeadTag = new Tag("meta", 2);
+    auto *metaViewportHeadTag = new Tag("meta", 2);
+    auto *titleHeadTag = new Tag("title", 1);
     auto *bodyTag = new Tag("body", 1);
+
+    auto *metaCharsetHeadAttribute = new Attribute("charset", "UTF-8");
+    auto *metaViewportNameHeadAttribute = new Attribute("name", "viewport");
+    auto *metaViewportContentHeadAttribute = new Attribute("name", "width=device-width,initial-scale=1.0");
+    metaCharsetHeadTag->addAttribute(metaCharsetHeadAttribute);
+    metaViewportHeadTag->addAttribute(metaViewportNameHeadAttribute);
+    metaViewportHeadTag->addAttribute(metaViewportContentHeadAttribute);
+    titleHeadTag->setText("Html Generator");
+
+    headTag->addTag(metaCharsetHeadTag);
+    headTag->addTag(metaViewportHeadTag);
 
     auto *googleLink = new Tag("a", 2);
     auto *attributeLinkGoogle = new Attribute("href", "https://www.google.com");
