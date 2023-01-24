@@ -14,11 +14,6 @@ using namespace std;
 
 int main() {
 
-    /* auto *a1 = new Attribute("href", "https://www.google.com");
-    auto *t1 = new Tag("a");
-    t1->addAttribute(a1);
-    t1->setText("Go to google"); */
-
     auto *htmlTag = new Tag("html");
     auto *headTag = new Tag("head", 1);
     auto *metaCharsetHeadTag = new Tag("meta", 2);
